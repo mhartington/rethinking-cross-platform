@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/rethinkgin-cross-platform',
+  pathPrefix: '/rethinking-cross-platform',
   plugins: [
     'gatsby-plugin-catch-links',
     {
