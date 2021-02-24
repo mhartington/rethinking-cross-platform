@@ -1,0 +1,315 @@
+import { CodeSurfer } from 'code-surfer';
+import { Appear, Notes, Image, Split } from 'mdx-deck';
+
+import "prismjs/components/prism-objectivec"
+import { FlexLayout, Video, BackgroundLayout } from './components';
+import Provider from './provider';
+import myTheme from './theme';
+
+export const theme = myTheme;
+
+<FlexLayout alignItems="center">
+<div style="text-align: center">
+
+
+# Rethinking Cross Platform
+
+<br/>
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+</div>
+
+
+</FlexLayout>
+
+---
+
+# Cross Platform
+
+---
+
+<FlexLayout direction="column" justify="center" alignItems="center">
+<div>
+
+## Goals
+- Reduce knowledged needed
+- Reduce the code needed
+- Reducd time to ship
+
+</div>
+</FlexLayout>
+
+---
+
+## Levels of abstractions
+
+---
+
+<FlexLayout alignItems="center">
+<div>
+
+Let's assess the ecosystem
+
+<img src="scale-1.png" />
+
+</div>
+</FlexLayout>
+
+---
+
+
+<FlexLayout>
+<img src="/cordova-logo.png" style="width: 800px" />
+</FlexLayout>
+
+
+---
+
+<FlexLayout alignItems="center">
+<div>
+
+## Write once, run anywhere
+
+- Web app that can deploy to native
+- Bridge between native and a browser
+- Polyfill for browser/webviews
+
+</div>
+</FlexLayout>
+
+---
+
+<CodeSurfer>
+
+```javascript
+navigator.camera.getPicture(
+  onSuccess, onFail,
+  {
+    quality: 25,
+    destinationType:
+      Camera.DestinationType.DATA_URL,
+  }
+);
+
+function onSuccess(imageData) { ... }
+function onFail(message) { ... }
+```
+
+```diff 1 title="Only available with Cordova"
+```
+
+</CodeSurfer>
+
+<Notes>
+Step 1: Whole code.
+Step 2: Highlihght line one, "only available with cordova"
+</Notes>
+
+---
+
+- Additional APIs provided by plugins
+- Custom package manager (pre-npm)
+- Complex build/release scripts
+
+---
+
+<FlexLayout>
+<div>
+
+## Things to keep in mind
+- Web as a polyfil target
+- No need for Native IDEs
+- Native projects as dist targets
+
+</div>
+</FlexLayout>
+
+
+---
+
+<FlexLayout>
+
+The other end of the spectrum
+
+</FlexLayout>
+
+---
+
+<FlexLayout>
+
+## "Compile" to Native
+
+</FlexLayout>
+
+---
+
+<FlexLayout>
+<div>
+
+## "Learn one, write anywhere"
+- Promise of "truly native" App
+- Abstractions around native controls
+- "Standard" lib around native APIs
+
+</div>
+</FlexLayout>
+
+---
+
+<img
+  src="/breakdown.png"
+  style="height: 80%; width: 80%; object-fit: contain"
+/>
+
+---
+
+<FlexLayout>
+<div>
+
+## Where it breaks down
+- Different syntax/languages
+- Can't reuse existing web app
+- Limited third-party libraries
+
+</div>
+</FlexLayout>
+
+---
+
+<FlexLayout>
+<div>
+
+## "Truely Native"
+- A bit misleading
+- Controls are rendered on the fly
+- Created via custom renderer (non-native)
+
+
+</div>
+</FlexLayout>
+
+---
+
+## Ok, so what else?
+
+---
+
+<img src="/scale-1.png" />
+
+---
+
+<img src="/cap-logo.png" style="max-width: 800px; width: 80vw" />
+
+---
+
+<FlexLayout>
+<div>
+
+### What is Cap?
+- Native Runtime, JS library
+- Adaptive API that can handle cross platform
+- Standard native tooling instead of custom
+
+</div>
+</FlexLayout>
+
+---
+
+<img
+  src="/cap-breakdown.png"
+  style="height: 80%; width: 80%; object-fit: contain"
+/>
+
+---
+
+<FlexLayout>
+<div>
+
+### How is this different?
+- Let's you reuse your existing web app
+- Runtime loads instantly
+- Utilizes Native best practices
+
+</div>
+</FlexLayout>
+
+---
+
+<FlexLayout>
+<div>
+
+### Usage
+
+_AKA: Demo Time_
+
+</div>
+</FlexLayout>
+
+---
+
+<FlexLayout>
+<div>
+
+### Existing Project?
+
+```shell
+npm install @capacitor/core -S
+npm install @capacitor/cli -D
+npx cap init
+```
+
+</div>
+</FlexLayout>
+
+---
+
+<FlexLayout>
+<div>
+
+### Learn more?
+
+- [capacitorjs.com](https://capacitorjs.com)
+- [capacitorjs.com/docs](https://capacitorjs.com/docs)
+- [github.com/capacitor-community](https://github.com/capacitor-community)
+
+</div>
+</FlexLayout>
+
+---
+
+<FlexLayout>
+<div>
+
+## In good company
+
+<img src="/cap-enterprise.png" style="max-width: 800px" />
+
+</div>
+</FlexLayout>
+
+---
+
+<Image src="https://capacitorjs.com/assets/img/blog/v3-beta/cap-3-beta-img.png" />
+
+---
+
+<FlexLayout>
+<div>
+
+### Parting Thoughts
+
+- Reduce code users have to write
+- Provide full native access, with the web
+- Don't hide the native projects
+
+</div>
+</FlexLayout>
+
+---
+
+### Thank you
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+### `</html>`
